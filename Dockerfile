@@ -3,8 +3,8 @@
 FROM golang:1.25-alpine
 WORKDIR /app
 COPY . .
-RUN go build
+# RUN go build
 
 EXPOSE 80
 
-CMD ["/envoy-test"]
+CMD ["go", "run", "server.go"]
