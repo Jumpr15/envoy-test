@@ -1,0 +1,13 @@
+services:
+  server1:
+    image: envoy-test-app:latest
+    ports:
+      - "80:80"
+    environment:
+      - PORT=80
+  server2:
+    image: envoy-test-app:latest
+    ports:
+      - "90:90"
+    environment:
+      - PORT=90

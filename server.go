@@ -20,7 +20,10 @@ func requestHandler(w http.ResponseWriter, r *http.Request) {
 
 
 func main() {
-	os.Setenv("PORT", "80")
+	_, exists := os.LookupEnv("PORT")
+	if !exists {
+		log.Panic("No port env var set")
+	}
 
 	http.HandleFunc("/", requestHandler)
 
