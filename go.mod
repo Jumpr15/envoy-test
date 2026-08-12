@@ -1,0 +1,3 @@
+module envoy-test
+
+go 1.25.7
