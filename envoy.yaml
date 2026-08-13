@@ -1,3 +1,7 @@
+node:
+  cluster: envoy_cluster
+  id: cluster_id
+
 static_resources:
 
   listeners:
@@ -56,3 +60,8 @@ static_resources:
     #   typed_config:
     #     "@type": type.googleapis.com/envoy.extensions.transport_sockets.tls.v3.UpstreamTlsContext
     #     sni: www.envoyproxy.io
+
+dynamic_resources:
+  lds_config:
+    path: lds.yaml # requires absolute pathing
+
