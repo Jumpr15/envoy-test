@@ -1,0 +1,1 @@
+note: absolute pathing in envoy.yaml dependent on files absolute location on machine

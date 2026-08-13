@@ -1,4 +1,21 @@
-resources:
+package main
+
+import (
+	"os"
+	"fmt"
+	"log"
+)
+
+func main() {
+	file, err := os.CreateTemp(".", "lds-temp-*.yaml")
+	if err != nil {
+		log.Fatal(err)
+	}
+	// defer os.Remove(file.Name())
+
+	fmt.Println(file.Name())
+
+	content := []byte(`resources:
 - "@type": type.googleapis.com/envoy.config.listener.v3.Listener
   name: listener_3
   address:
@@ -28,4 +45,13 @@ resources:
               - match:
                   prefix: "/"
                 route:
-                  cluster: service_envoyproxy_io
+                  cluster: service_envoyproxy_io`)
+
+	_, err = file.Write(content)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+
+	os.Rename(file.Name(), "lds.yaml")
+}

@@ -63,5 +63,5 @@ static_resources:
 
 dynamic_resources:
   lds_config:
-    path: lds.yaml # requires absolute pathing
+    path: /Users/stevenzhou/envoy-test/lds.yaml # requires absolute pathing for file on machine
 
