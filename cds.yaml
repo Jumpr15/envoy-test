@@ -1,0 +1,17 @@
+resources:
+- "@type": type.googleapis.com/envoy.config.cluster.v3.Cluster
+  name: service_envoyproxy_io
+  type: strict
+  lb_policy: random
+  load_assignment:
+    cluster_name: service_envoyproxy_io
+    endpoints:
+    - lb_endpoints:
+      - endpoint:
+          address:
+            socket_address:
+              address: 127.0.0.1
+              port_value: 80
+            socket_address:
+              address: 127.0.0.1
+              port_value: 90

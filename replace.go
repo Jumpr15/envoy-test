@@ -6,6 +6,7 @@ import (
 	"log"
 )
 
+// For adding LDS endpoint (Doesnt support removal of endpoints)
 func main() {
 	file, err := os.CreateTemp(".", "lds-temp-*.yaml")
 	if err != nil {
