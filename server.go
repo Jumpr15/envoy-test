@@ -1,11 +1,11 @@
 package main
 
 import (
-	"os"
-	"log"
-	"fmt"
-	"net/http"
 	"encoding/json"
+	"fmt"
+	"log"
+	"net/http"
+	"os"
 )
 
 func requestHandler(w http.ResponseWriter, r *http.Request) {
@@ -17,7 +17,6 @@ func requestHandler(w http.ResponseWriter, r *http.Request) {
 
 	w.Write(res)
 }
-
 
 func main() {
 	_, exists := os.LookupEnv("PORT")

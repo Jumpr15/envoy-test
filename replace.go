@@ -1,9 +1,9 @@
 package main
 
 import (
-	"os"
 	"fmt"
 	"log"
+	"os"
 )
 
 // For adding LDS endpoint (Doesnt support removal of endpoints)
@@ -52,7 +52,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
 
 	os.Rename(file.Name(), "lds.yaml")
 }
